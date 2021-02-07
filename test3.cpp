@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <random>
+#include <ctime>
+#include <chrono>
 
 int main()
 {
@@ -13,6 +15,7 @@ int main()
     std::default_random_engine generator;
     std::uniform_int_distribution<int> distribution(1, 100);
     int randNumber = distribution(generator);
+    generator.seed(std::time(nullptr));
     std::cout << "Random number is : " << randNumber;
     std::cout << "\n\n";
     std::cout << userInput << " X " << randNumber;
